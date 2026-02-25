@@ -15,7 +15,7 @@ The goal was to:
 4. Evaluate model performance using manual labeling (ground truth)
 5. Analyze strengths, failures, and practical tradeoffs (speed vs accuracy)
 
-This assignment emphasizes both technical execution and critical evaluation of model behavior on real customer review text.  [oai_citation:2‡Copy of Assignments 1_ Sentiment Analysis.pdf](sediment://file_000000001e5871f587c1a58fde67fbf4)
+This assignment emphasizes both technical execution and critical evaluation of model behavior on real customer review text.  
 
 ---
 
@@ -25,7 +25,7 @@ This assignment emphasizes both technical execution and critical evaluation of m
 - **Airline Reviews dataset** (Kaggle airline reviews / customer feedback dataset)
 
 ### Why I Chose This Dataset
-I selected the airline review dataset because airline reviews are rich in real-world sentiment (positive, negative, mixed/neutral) and are strategically relevant for customer service analysis, service quality monitoring, and operational decision-making. This makes the comparison of sentiment models meaningful in a practical business context. (This aligns with my written justification in the assignment.)  [oai_citation:3‡Copy of Assignments 1_ Sentiment Analysis.pdf](sediment://file_000000001e5871f587c1a58fde67fbf4)  [oai_citation:4‡Copy of Assignments 1_ Sentiment Analysis.pdf](sediment://file_000000001e5871f587c1a58fde67fbf4)
+I selected the airline review dataset because airline reviews are rich in real-world sentiment (positive, negative, mixed/neutral) and are strategically relevant for customer service analysis, service quality monitoring, and operational decision-making. This makes the comparison of sentiment models meaningful in a practical business context. (This aligns with my written justification in the assignment.) 
 
 ### Main Text Column
 - The primary text field used for sentiment analysis was the **review body** (stored/renamed in my notebook as `text_raw`, with additional cleaned variants such as `text_vader` and `text_clean`).
@@ -245,7 +245,7 @@ I would recommend the **Transformer model** for this airline review dataset beca
 
 ---
 
-## Key Findings Summary (Quick Version)
+## Key Findings Summary
 
 - The airline review dataset is a strong fit for sentiment analysis because reviews contain rich real-world customer sentiment.
 - Model-specific preprocessing matters (especially punctuation handling).
@@ -265,3 +265,59 @@ I would recommend the **Transformer model** for this airline review dataset beca
 Install required Python libraries (example):
 ```bash
 pip install pandas numpy matplotlib seaborn nltk textblob vaderSentiment transformers torch scikit-learn
+```
+
+## 2) Download / place the dataset
+- Place the airline reviews CSV file in:
+  - `assignment_1/data/raw/`
+- If your dataset filename is different, update the file path in the notebook where `pd.read_csv(...)` is called.
+
+Example expected path:
+- `assignment_1/data/raw/BA_AirlineReviews.csv`
+
+## 3) Run the notebook
+1. Open JupyterLab / Jupyter Notebook
+2. Open:
+   - `assignment_1/notebooks/sentiment_analysis.ipynb`
+3. Run cells in order from top to bottom:
+   - Step 1: Load dataset
+   - Step 2: EDA / exploration
+   - Step 3: preprocessing + cleaning (`text_raw`, `text_vader`, `text_clean`)
+   - Step 5: model implementations (VADER, TextBlob, Transformer)
+   - Step 6: evaluation workflow (100-row sample, manual labeling, accuracy report)
+
+## 4) Manual labeling workflow (required for Step 6.1)
+1. Generate the random 100-row sample in the notebook.
+2. Export the sample to CSV (includes:
+   - `text_raw`
+   - predictions for VADER / TextBlob / Transformer
+   - optional `tr_top_emotion`
+   - empty `real_y` column for manual ground truth)
+3. Open the CSV and fill in `real_y` manually using:
+   - `positive`, `neutral`, `negative`
+4. Save the filled file as:
+   - `filled_random_sample_review.csv` (or your chosen filename)
+5. Re-load the filled file in the notebook to compute:
+   - accuracy per model
+   - confusion matrices
+   - success/failure examples
+
+## 5) Notes about Transformer runtime
+- The transformer model is the slowest of the three.
+- I tested transformer scoring on a subset when needed (e.g., first 200 rows) for development and timing.
+- The transformer input is truncated to `max_length=512` tokens, which may affect very long reviews.
+
+---
+
+## Results Visualization (What to Include)
+
+## Results Visualizations
+
+### Text Length Histogram
+![Text Length Histogram](notebooks/text_length_hist.png)
+
+### Confusion Matrix
+![Confusion Matrix](notebooks/confusion_matrix.png)
+
+### Model Comparison Criteria Table
+![Model Comparison Criteria Table](notebooks/criteria_table.png)
