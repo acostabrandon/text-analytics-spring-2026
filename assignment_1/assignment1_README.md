@@ -265,6 +265,7 @@ I would recommend the **Transformer model** for this airline review dataset beca
 Install required Python libraries (example):
 ```bash
 pip install pandas numpy matplotlib seaborn nltk textblob vaderSentiment transformers torch scikit-learn
+```
 
 ## 2) Download / place the dataset
 - Place the airline reviews CSV file in:
