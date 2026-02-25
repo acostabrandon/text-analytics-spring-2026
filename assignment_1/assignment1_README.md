@@ -311,24 +311,13 @@ Example expected path:
 
 ## Results Visualization (What to Include)
 
-At minimum, include:
-- **1 visualization from analysis** (ex: text length histogram)
-- **confusion matrix OR comparison table** (I included both in my results section)
+## Results Visualizations
 
-Recommended visuals to save/export (screenshots are fine):
-1. Text length distribution histogram
-2. Confusion matrices for:
-   - VADER
-   - TextBlob
-   - Transformer
-3. Model comparison table (speed, accuracy, emphasis, negation, long reviews)
+### Text Length Histogram
+![Text Length Histogram](notebooks/text_length_hist.png)
 
-If you saved figures, store them here:
-- `assignment_1/docs/figures/` (or `assignment_1/figures/`)
+### Confusion Matrix
+![Confusion Matrix](notebooks/confusion_matrix.png)
 
-Example embed links (update filenames/paths):
-```md
-![Text Length Distribution](docs/figures/text_length_hist.png)
-![VADER Confusion Matrix](docs/figures/vader_confusion_matrix.png)
-![TextBlob Confusion Matrix](docs/figures/textblob_confusion_matrix.png)
-![Transformer Confusion Matrix](docs/figures/transformer_confusion_matrix.png)
+### Model Comparison Criteria Table
+![Model Comparison Criteria Table](notebooks/criteria_table.png)
