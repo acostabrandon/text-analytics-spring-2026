@@ -15,7 +15,7 @@ The goal was to:
 4. Evaluate model performance using manual labeling (ground truth)
 5. Analyze strengths, failures, and practical tradeoffs (speed vs accuracy)
 
-This assignment emphasizes both technical execution and critical evaluation of model behavior on real customer review text.  [oai_citation:2‡Copy of Assignments 1_ Sentiment Analysis.pdf](sediment://file_000000001e5871f587c1a58fde67fbf4)
+This assignment emphasizes both technical execution and critical evaluation of model behavior on real customer review text.  
 
 ---
 
@@ -25,7 +25,7 @@ This assignment emphasizes both technical execution and critical evaluation of m
 - **Airline Reviews dataset** (Kaggle airline reviews / customer feedback dataset)
 
 ### Why I Chose This Dataset
-I selected the airline review dataset because airline reviews are rich in real-world sentiment (positive, negative, mixed/neutral) and are strategically relevant for customer service analysis, service quality monitoring, and operational decision-making. This makes the comparison of sentiment models meaningful in a practical business context. (This aligns with my written justification in the assignment.)  [oai_citation:3‡Copy of Assignments 1_ Sentiment Analysis.pdf](sediment://file_000000001e5871f587c1a58fde67fbf4)  [oai_citation:4‡Copy of Assignments 1_ Sentiment Analysis.pdf](sediment://file_000000001e5871f587c1a58fde67fbf4)
+I selected the airline review dataset because airline reviews are rich in real-world sentiment (positive, negative, mixed/neutral) and are strategically relevant for customer service analysis, service quality monitoring, and operational decision-making. This makes the comparison of sentiment models meaningful in a practical business context. (This aligns with my written justification in the assignment.) 
 
 ### Main Text Column
 - The primary text field used for sentiment analysis was the **review body** (stored/renamed in my notebook as `text_raw`, with additional cleaned variants such as `text_vader` and `text_clean`).
