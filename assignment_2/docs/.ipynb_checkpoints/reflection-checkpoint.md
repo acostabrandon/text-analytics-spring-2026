@@ -1,0 +1,16 @@
+# Reflection
+
+## How many of 20 did the model get right (by your judgment)?
+Based on my judgment, the model got 17/20 of the AI-produced examples correct. 
+
+## Did the model fail on the “tricky” examples? Why?
+Yes, the model did not predict correctly on two of the "tricky" examples (out of a total of 5). This is mostly due to the fact that the examples in the tricky example balanced positive review sentiment, with negative review sentiment. For example, it failed this one: "I wanted to love this film, and parts of it were great, but overall it felt disappointing.". It claims the review is positive, mostly due to the presence of positive words like "love" and "great", however, one important flaw in the model is its inability to take into account the context of the sentence. Overall, the reviewer did not like the movie, which is the key into why this is a negative review. The same goes for "The acting was good and the visuals were impressive, yet something about it felt empty." Even though there are positive sentiments at the beginning, the overall conclusion at the end of the review is that it felt empty, and thus, the movie did not get a positive review.
+
+## Did the model handle out-of-domain examples? Why or why not?
+It handled most out-of-domain examples correctly, the only one that it was not successful at was the horror movie out of domain example. This is most likely due to the language that is used to describe a horror movie. "The horror movie had a creepy atmosphere, though the ending was weak and predictable." Although the word creepy is typically negative, for the context of a horror movie, the creepier the better. The reviewer makes some shallow, and not strongly negative enough remarks about the ending of the movie. Overall, the messaging of the movie being "creepy" is something that would be considered positive for a horror movie, rather than negative. 
+
+## What does this tell you about your model’s generalization ability?
+Overall, the model is able to confidently predict the movie review sentiment and successfully made generalizations for 4/5 domain examples. Where there could be issues is for very specific, nuanced reviews, like those for horror movies, or extremely lengthy reviews that balance both positive and negative sentiment equally. All things considered though, I believe the model is able to make solid, and quick predictions, with little need for manual review of the accuracy since it does a good job of capturing context, emphasis on words or phrases, and overall sentiment. 
+
+## Would you trust this model in production based on this test?
+Yes, I would trust this model in production since the nature of real reviews is that they will be messy, inconsistent, long, sarcastic, and nuanced especially when it comes to movies. Based on the performance of this model, it was able to accurately predict most of the reviews, and may struggle when it comes to longer reviews, very specific domains like horror, or reviews that equally mention the positives and negatives of a review. I believe that in deployment though, it would be favorable to extract the majority of negative reviews to help gather direct constructive criticism of the performance of movies at the box office. 
